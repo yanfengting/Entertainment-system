@@ -1,0 +1,14 @@
+npm install
+
+npm run serve
+
+
+
+��ע��
+��һЩ������Ҫ����WiFi donouse�ſ��Ի�ȡ��
+
+�󲿷ֵ�ҳ�涼���� pages�ļ��У�router·����ת
+
+ҳ�����õ�������ŵ� components�ļ���
+
+data�������һЩ��������

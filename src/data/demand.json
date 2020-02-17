@@ -1,0 +1,22 @@
+{   
+    "status": 200,
+    "msg": "\u67e5\u8be2\u6210\u529f",
+    "data": [
+        {
+            "type": "毛巾",
+            "thumbUrl": "http://fuss10.elemecdn.com/7/72/9a580c1462ca1e4d3c07e112bc035jpeg.jpeg?imageView2/1/w/750/h/750",               
+            "description": "毛巾毛巾毛巾毛巾毛巾毛巾毛巾毛巾毛巾毛巾"
+            }, {
+            "type": "耳塞",
+            "thumbUrl": "http://fuss10.elemecdn.com/8/a6/453f65f16b1391942af11511b7a90jpeg.jpeg?imageView2/1/w/750/h/750",
+            "description": "耳塞耳塞耳塞耳塞耳塞耳塞耳塞耳塞耳塞耳塞"
+        }, {
+            "type": "热水",
+            "thumbUrl": "http://fuss10.elemecdn.com/7/72/9a580c1462ca1e4d3c07e112bc035jpeg.jpeg?imageView2/1/w/750/h/750",
+            "description": "热水热水热水热水热水热水热水热水热水热水"                
+        }, {
+            "type": "其他",
+            "thumbUrl": "http://fuss10.elemecdn.com/8/a6/453f65f16b1391942af11511b7a90jpeg.jpeg?imageView2/1/w/750/h/750",
+            "description": "其他其他其他其他其他其他其他其他其他其他"
+        }]
+}

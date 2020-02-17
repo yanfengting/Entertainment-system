@@ -1,0 +1,14 @@
+{   
+    "data": [
+        {
+            "price": "15",
+            "name": "面条",
+            "thumbURL": "http://fuss10.elemecdn.com/f/28/a51e7b18751bcdf871648a23fd3b4jpeg.jpeg?imageView2/1/w/750/h/750"                
+        }, {
+            "price": "20",
+            "name": "米饭",
+            "thumbURL": "http://fuss10.elemecdn.com/c/cd/c12745ed8a5171e13b427dbc39401jpeg.jpeg?imageView2/1/w/750/h/750"
+        }],
+    "status": 200,
+    "msg": "\u67e5\u8be2\u6210\u529f"
+}

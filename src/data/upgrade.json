@@ -1,0 +1,16 @@
+{   
+    "status": 200,
+    "msg": "\u67e5\u8be2\u6210\u529f",
+    "data": [
+        {
+            "classType": "商务舱",
+            "price": 280,            
+            "thumbUrl": "http://fuss10.elemecdn.com/f/28/a51e7b18751bcdf871648a23fd3b4jpeg.jpeg?imageView2/1/w/750/h/750",                
+            "description": "商务舱商务舱商务舱商务舱商务舱商务舱商务舱商务舱商务舱商务舱商务舱商务舱商务舱商务舱商务舱商务舱商务舱商务舱商务舱商务舱"
+        }, {
+            "classType": "头等舱",
+            "price": 880,            
+            "thumbUrl": "http://fuss10.elemecdn.com/c/cd/c12745ed8a5171e13b427dbc39401jpeg.jpeg?imageView2/1/w/750/h/750",                
+            "description": "头等舱头等舱头等舱头等舱头等舱头等舱头等舱头等舱头等舱头等舱头等舱头等舱头等舱头等舱头等舱头等舱头等舱头等舱头等舱头等舱头等舱"
+        }]
+}

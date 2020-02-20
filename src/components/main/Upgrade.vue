@@ -14,7 +14,7 @@
   import UpgradeAlert from './UpgradeAlert'
 
   export default {
-    components: {UpgradeAlert},
+    components: { UpgradeAlert },
     props: {
       seat: {
         type: String

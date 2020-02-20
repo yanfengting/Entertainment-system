@@ -26,7 +26,7 @@ Vue.config.productionTip = false
 axios.interceptors.request.use(function (config) {
   let userInfo = localStorage.getItem('userInfo')
   let token = ''
-  if (userInfo != undefined && userInfo.length > 10) {
+  if (userInfo !== undefined && userInfo.length > 10) {
     userInfo = JSON.parse(userInfo)
     if (userInfo.token) {
       token = userInfo.token
@@ -69,6 +69,9 @@ Vue.prototype.$dialog = (text, icon = 'success', show = true) => {
   return registryDialog.showDialog(text, icon, show)
 }
 Vue.use(audio)
+
+// console.log(process.env.NODE_ENV)
+
 let vue = new Vue({
   router,
   watch: {

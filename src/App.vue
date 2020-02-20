@@ -19,11 +19,11 @@
     },
     created() {
       this.$store.state.curMusic = this.music
-      this.connectWebSocket()
+      // this.connectWebSocket()
       // console.log('获取数据', this.$store.state.curMusic)
     },
     methods: {
-      connectWebSocket() {
+      /* connectWebSocket() {
         this.initWebSocket()
         let _this = this
         setTimeout(function () {
@@ -38,7 +38,7 @@
         this.websock.onerror = this.websocketonerror
         this.websock.onmessage = this.websocketonmessage
         this.websock.onclose = this.websocketclose
-      },
+      }, */
       exitFullscreen() {
         var de = document
         try {
@@ -53,7 +53,7 @@
           console.error('不支持 exitFullscreen', e)
         }
       },
-      websocketonopen() {
+      /* websocketonopen() {
         this.lockReconnect = true
         console.log('WebSocket连接成功')
       },
@@ -92,7 +92,7 @@
         } else {
           this.$store.commit('setCurHeight', data)
         }
-      },
+      }, */
       showRadio(msg, show) {
         let alert = this.$dialog(msg, 'my-radio', false)
         this.opAudio(alert, show)
@@ -133,14 +133,14 @@
         } else {
           alert.hide()
         }
-      },
-      websocketsend(agentData) { // 数据发送
+      }
+      /* websocketsend(agentData) { // 数据发送
         this.websock.send(agentData)
       },
       websocketclose(e) { // 关闭
         this.initWebSocket()
         console.log('connection closed (' + e.code + ')')
-      }
+      } */
     }
   }
 </script>

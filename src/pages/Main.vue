@@ -1,7 +1,6 @@
 <template>
   <div width="100%">
-    <header class="mui-bar mui-bar-nav"
-            style="display: flex;flex-direction: row;align-items: center; justify-content: space-between">
+    <header class="mui-bar mui-bar-nav" style="display: flex;flex-direction: row;align-items: center; justify-content: space-between">
       <div class="mui-action-back mui-icon mui-icon-back mui-action-menu"></div>
       <h1 class="mui-title"
           @click="itinerary">
@@ -202,11 +201,11 @@
 <script>
   import registryToast from '../components/common/toast/index'
   import Sidebar from '../components/common/Sidebar.vue'
-  import Swiper from '../components/main/Swiper.vue'
+  // import Swiper from '../components/main/Swiper.vue'
   import Upgrade from '../components/main/Upgrade.vue'
   import Demand from '../components/main/Demand.vue'
   import Food from '../components/main/Food.vue'
-  import registryDialog from '../components/common/dialog/index'
+  // import registryDialog from '../components/common/dialog/index'
 
   export default {
     data() {
@@ -384,9 +383,9 @@
       opinion() {
         this.$router.push('/opinion')
       },
-      showwait() {
-        let toast = this.$dialog('该功能正在开发中', 'my-wait')
-      },
+      // showwait() {
+      //   let toast = this.$dialog('该功能正在开发中', 'my-wait')
+      // },
       dateDif(enddate, starttime) {
         // console.log(Date.parse(new Date(enddate)) + '---' + Date.parse(new Date(starttime)))
 
@@ -400,8 +399,8 @@
         var hoursRound = Math.floor(hours)
         var minutes = date / 1000 / 60 - (24 * 60 * daysRound) - (60 * hoursRound)// 分钟
         var minutesRound = Math.floor(minutes)
-        var seconds = date / 1000 - (24 * 60 * 60 * daysRound) - (60 * 60 * hoursRound) - (60 * minutesRound)// 秒计算
-        var secondsRound = Math.floor(seconds)// 秒
+        // var seconds = date / 1000 - (24 * 60 * 60 * daysRound) - (60 * 60 * hoursRound) - (60 * minutesRound)// 秒计算
+        // var secondsRound = Math.floor(seconds)// 秒
         var time = (hoursRound + '小时' + minutesRound + '分钟')
         // console.log(time)
         return time

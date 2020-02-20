@@ -1,3 +1,4 @@
+// var appData = require('./src/data/music.json')
 
 module.exports = {
   devServer: {

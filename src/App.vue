@@ -22,6 +22,12 @@
       // this.connectWebSocket()
       // console.log('获取数据', this.$store.state.curMusic)
     },
+    // // 挂载的时候获取新闻列表
+    // mounted() {
+    //   this.axios.get('/api/item/list').then(res => { // url即在mock.js中定义的
+    //     console.log(res.data) // 打印一下响应数据
+    //   })
+    // },
     methods: {
       /* connectWebSocket() {
         this.initWebSocket()

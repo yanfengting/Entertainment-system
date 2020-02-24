@@ -17,6 +17,7 @@
     data() {
       return {
         readArr: [],
+        // label: '',
         ebookArr: [],
         initindex: 0
       }
@@ -73,7 +74,7 @@
         }
       }
     },
-    components: {Nav, Readtab}
+    components: { Nav, Readtab }
   }
 </script>
 <style lang="stylus">

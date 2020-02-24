@@ -6,12 +6,14 @@
       <div style="margin:10px;display:flex;flex-direction:row;width:55%;">
         <div class="game-content contentdetail" >
           <div class="quiz-height detail-height"
-               :style="{'background': 'url('+'http://10.191.1.1' +data.poster+') ', 'background-repeat': 'no-repeat', 'background-size': '100% 100%', 'background-position': 'center center' }"></div>
+               :style="{'background-repeat': 'no-repeat', 'background-size': '100% 100%', 'background-position': 'center center' }"></div>
+          <!-- <div class="quiz-height detail-height"
+               :style="{'background': 'url('+'http://10.191.1.1/' +data.poster+') ', 'background-repeat': 'no-repeat', 'background-size': '100% 100%', 'background-position': 'center center' }"></div> -->
         </div>
         <div class="game-desc">
           <div class="game-name">{{data.name}}</div>
           <button
-            style="font-size:15px;z-index:1111;width:90px;padding: 5px 15px;background-color:#569fff;color:white;outline:none;border:none;border-radius:5px"
+            style="font-size:15px;width:90px;padding: 5px 15px;background-color:#569fff;color:white;outline:none;border:none;border-radius:5px"
             @click="playGame()">开始游戏
           </button>
         </div>
@@ -61,7 +63,7 @@
     created: function () {
       let id = this.$route.query.id
       let _this = this
-      console.log(id)
+      // console.log(id)
       // let swiper = this.initbanner()
       this.axios.get('/api/game/' + id).then(function (res) {
         let data = res.data
@@ -128,6 +130,7 @@
     background-position: center center
     .detail-height
       height: 120px;
+      // background: url(../assets/images/game.jpg)
     .quiz-height
       background-size: 100% 100%;
 

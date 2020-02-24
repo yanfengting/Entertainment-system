@@ -68,7 +68,7 @@
   import registryToast from '../components/common/toast/index'
   //  任何地方使用
   //  registryToast.showToast('网络连接成功')
-  var that
+  // var that
 
   export default {
     name: 'login',
@@ -120,7 +120,7 @@
             _self.online = false
           }
         }, function (error) {
-          alert('请求失败', error)
+          console.log('4g请求失败', error)
         })
       this.axios({
         method: 'get',

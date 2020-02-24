@@ -70,7 +70,6 @@
                 </a>
               </div>
             </div>
-
           </div>
 
           <div type="flex" class="van-row--flex sku_specification2">

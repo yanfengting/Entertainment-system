@@ -119,7 +119,7 @@
             this.is_sku = false
           }
         } else {
-          alert('数据获取失败，请刷新重试')
+          console.log('callbell数据获取失败，请刷新重试')
         }
       })
     },
@@ -163,7 +163,7 @@
               })
             }
           } else {
-            alert('数据获取失败，请刷新重试')
+            console.log('呼唤铃数据获取失败，请刷新重试')
           }
         })
         // 获取我的订单
@@ -242,7 +242,7 @@
             }
             // console.log(_self.readonly)
           }, function (error) {
-            alert('请求失败', error)
+            console.log('4g请求失败', error)
           })
       },
       showSuccess() {

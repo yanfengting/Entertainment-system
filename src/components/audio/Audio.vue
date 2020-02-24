@@ -51,7 +51,7 @@
           if (this.$store.state.timeDurationInt) {
             this.$store.commit('endMusic')
           } else {
-            // alert('音乐播放失败')
+            console.log('音乐播放失败')
           }
         }
       }, // 结束

@@ -84,7 +84,7 @@
       this.userInfo = JSON.parse(userInfo) // 转为JSON
       this.axios({
         method: 'post',
-        url: 'api/order/unfinished'
+        url: '/api/order/unfinished'
       }).then((res) => {
         // console.log(res)
         if (res.status === 200) {
@@ -104,7 +104,7 @@
         // sessionStorage.setItem('flight', JSON.stringify(this.flight))
         this.axios({
           method: 'get',
-          url: 'api/flightDetail/getUserFlight'
+          url: '/api/flightDetail/getUserFlight'
         }).then((res) => {
           if (res.status === 200) {
             this.flightDetail = res.data.data

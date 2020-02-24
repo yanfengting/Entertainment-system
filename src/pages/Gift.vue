@@ -123,6 +123,12 @@ export default {
       giftArr: []
     }
   },
+  // 挂载的时候获取列表
+  mounted() {
+    this.axios.get('/api/item/list').then(res => { // url即在mock.js中定义的
+      console.log(res.data) // 打印一下响应数据
+    })
+  },
   created: function () {
     console.log('here')
     var userInfo = localStorage.getItem('userInfo')
@@ -148,14 +154,14 @@ export default {
     })
   },
   methods: {
-    hangxian (){
-      this.$router.push({path: '/giftXianHang'})
+    hangxian () {
+      this.$router.push({ path: '/giftXianHang' })
     },
-    wenchuang(){
-      this.$router.push({path: '/giftWenChuang'})
+    wenchuang() {
+      this.$router.push({ path: '/giftWenChuang' })
     },
-    lvyou(){
-      this.$router.push({path: '/giftLvYou'})
+    lvyou() {
+      this.$router.push({ path: '/giftLvYou' })
     },
     shopDetail () {
       this.$router.push({

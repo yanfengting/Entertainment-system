@@ -23,6 +23,7 @@ Vue.config.productionTip = false
 // window.jQuery = jquery
 // Vue.jquery = Vue.$ = jquery
 // axios.header
+// 请求拦截器
 axios.interceptors.request.use(function (config) {
   let userInfo = localStorage.getItem('userInfo')
   let token = ''
@@ -47,6 +48,7 @@ axios.interceptors.request.use(function (config) {
   return Promise.reject(error)
 })
 axios.defaults.timeout = 30000 // 超时时间
+// 响应拦截器
 axios.interceptors.response.use(function (response) {
   // token 已过期，重定向到登录页面
   if (response.data.status === 401) {
@@ -71,6 +73,11 @@ Vue.prototype.$dialog = (text, icon = 'success', show = true) => {
 Vue.use(audio)
 
 // console.log(process.env.NODE_ENV)
+
+// 开发环境
+if (process.env.NODE_ENV === 'development') {
+  require('./mock/mock.js')
+}
 
 let vue = new Vue({
   router,

@@ -153,7 +153,7 @@
       },
       setInputStatus() {
         let _self = this
-        this.axios.get('/api/4g/status', {emulateJSON: true})
+        this.axios.get('/api/4g/status', { emulateJSON: true })
           .then(function (response) {
             if (response.data.status === 200) {
               // 登录后跳转的页面
@@ -163,7 +163,7 @@
             }
             console.log(_self.readonly)
           }, function (error) {
-            alert('请求失败', error)
+            console.log('4g请求失败', error)
           })
       },
       // 点击蒙层取消
@@ -219,7 +219,7 @@
               _this.$parent.cancelMask()
             }
             , function (err) {
-              alert(err)
+              console.log(err)
             })
         }
       },

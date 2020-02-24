@@ -121,7 +121,7 @@
           console.log('没有餐食数据')
         }
       } else {
-        alert('数据获取失败，请刷新重试')
+        console.log('餐食数据获取失败，请刷新重试')
       }
     })
   },
@@ -184,7 +184,7 @@
               })
             }
           } else {
-            alert('数据获取失败，请刷新重试')
+            console.log('餐食数据获取失败，请刷新重试')
           }
         })
         // 获取我的订单
@@ -251,7 +251,7 @@
               }
             }
             , function (err) {
-              alert(err)
+              console.log(err)
             })
         }
       },
@@ -267,7 +267,7 @@
             }
             // console.log(_self.readonly)
           }, function (error) {
-            alert('请求失败', error)
+            console.log('4g请求失败', error)
           })
       },
       showSuccess() {

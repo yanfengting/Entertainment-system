@@ -17,7 +17,7 @@
   export default {
     data() {
       return {
-        musicArr: [{
+        gameArr: [{
           label: '',
           initindex: 0,
           data: [{ 'seller': '', 'poster': '', 'name': '' }]
@@ -46,10 +46,10 @@
                 }
               })
             }
-            _this.musicArr = tabs
+            _this.gameArr = tabs
             _this.tabs = tabs
             // _this.tabs = res.data.data
-            console.log(this.musicArr)
+            console.log(this.gameArr)
           } else {
             console.log('数据获取失败，请刷新重试')
           }
@@ -62,14 +62,14 @@
     computed: {
       tabs: {
         get: function () {
-          return this.musicArr
+          return this.gameArr
         },
         set: function (value) {
-          this.musicArr = value
+          this.gameArr = value
         }
       }
     },
-    components: {Nav, Gamestab}
+    components: { Nav, Gamestab }
   }
 </script>
 <style lang="stylus">

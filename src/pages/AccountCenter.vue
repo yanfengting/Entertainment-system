@@ -3,7 +3,7 @@
     <Nav></Nav>
     <div class="account-center-top">
       <img src="../assets/images/avatar.png" style="width: 100px;margin-top: 45px;"/>
-      <div style="margin-top:5px;">{{userInfo.name}}</div>  
+      <div style="margin-top:5px;">{{userInfo.name}}</div>
       <div v-if="member != 0" style="font-size:13px;color:rgb(255,203,0);margin-top:5px; line-height: 5vw;">
         <div>会员 {{grade}}</div>
         <div>积分 {{integral}}</div>
@@ -70,14 +70,14 @@
       // console.log(name)
       // 请求会员数据 判断如果手机号存在于数据库，提示已经注册会员
       this.axios.get('/api/member/get?phone=' + this.userInfo.tel).then(res => {
-        // console.log(res)
+        console.log(res)
         if (res.data.status === 200) {
-          if(res.data.data != null){
+          if (res.data.data !== null) {
             this.member = res.data.data;
             this.grade = res.data.data.grade;
-            this.integral = res.data.data.integral; 
+            this.integral = res.data.data.integral;
           }
-        }else{
+        } else {
           console.log('数据获取失败')
         }
       })
@@ -94,7 +94,6 @@
           console.log('数据获取失败，请刷新重试')
         }
       })
-
     },
     components: {
       Nav

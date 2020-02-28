@@ -58,7 +58,7 @@
                     <img src="images/1.png" style="width: 86px;height: 86px;" alt>
                   </div>
                   <div class="product-text">
-                    <p>￥22</p>
+                    <p><strong>¥</strong>22</p>
                     <p>XXXXXXXXXXX</p>
                   </div>
                 </div>

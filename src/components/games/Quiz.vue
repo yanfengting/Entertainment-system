@@ -45,7 +45,7 @@
     },
     methods: {
       onScroll(pos) {
-        console.log(pos)
+        // console.log(pos)
       },
       gamedetail(items) {
         this.$router.push({ path: './gamesDetail', query: { 'id': items.id } })

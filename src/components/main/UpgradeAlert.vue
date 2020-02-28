@@ -10,7 +10,7 @@
             </div>
             <div class="main">
               <div class="price-wrap">
-                <p><span>￥</span>{{price}}</p>
+                <p><strong>¥</strong>{{price}}</p>
               </div>
               <div>
                 <ul class="product-footerlist clearfix">

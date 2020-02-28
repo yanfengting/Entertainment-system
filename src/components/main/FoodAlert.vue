@@ -9,7 +9,7 @@
                 </div>
                 <div class="main">
                   <div class="price-wrap">
-                    <p class="food-price">￥{{price}}<span>/份</span></p>
+                    <p class="food-price"><strong>¥</strong>{{price}}<span>/份</span></p>
                   </div>
                   <div class="product-delcom" style="position: absolute;bottom: 20px;" v-if="i==-1">
                     <p style="">选择餐食种类</p>
@@ -48,7 +48,7 @@
           <div type="flex" class="van-row--flex sku_specification3">
             <div class="van-col van-col--12" :span="12">总价</div>
             <div class="van-col van-col--12 number" style="text-align: right">
-              <div id="number" class="number"  style="height: auto; border: 1px solid #fff;  text-align: right;">￥{{countPrice}}</div>
+              <div id="number" class="number"  style="height: auto; border: 1px solid #fff;  text-align: right;"><strong>¥</strong>{{countPrice}}</div>
             </div>
           </div>
           <div type="flex" class="van-row--flex sku_specification3" >

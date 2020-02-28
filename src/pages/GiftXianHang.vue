@@ -28,7 +28,7 @@
               <div class="list-mes-item list-mes">
                 <div style="color: #FF5238;margin-bottom:10px;">
                   <span class="list-price" v-if="item.isfree === 0">
-                    <em>¥</em>{{item.price}}
+                    <strong>¥</strong>{{item.price}}
                   </span>
                   <span class="list-price" v-else>
                     免费
@@ -76,6 +76,12 @@ export default {
       giftArr: []
     }
   },
+  // 挂载的时候获取列表
+  // mounted() {
+  //   this.axios.get('/api/item/list').then(res => { // url即在mock.js中定义的
+  //     console.log(res.data) // 打印一下响应数据
+  //   })
+  // },
   created: function () {
     var userInfo = localStorage.getItem('userInfo')
     this.userInfo = JSON.parse(userInfo) // 转为JSON

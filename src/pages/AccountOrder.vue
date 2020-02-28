@@ -13,7 +13,7 @@
           <div class="orderType"><span v-if="l.orderType === 'CB'">呼唤铃</span><span
             v-if="l.orderType === 'FO'">机上餐食</span><span v-if="l.orderType === 'GR'">机上升舱</span></div>
           <div class="orderDetail">
-            <div class="place">￥{{l.price}}</div>
+            <div class="place"><strong>¥</strong>{{l.price}}</div>
             <div class="orderNo"> 订单号{{l.orderNo}}</div>
           </div>
         </div>

@@ -29,7 +29,7 @@
     <div class="module-price">
       <div class="real-price">
         <span>
-          <em>¥</em> 34.7
+          <strong>¥</strong> 34.7
         </span>
       </div>
     </div>
@@ -61,7 +61,7 @@
                 <div class="main">
                   <div class="price-wrap">
                     <!-- <p class="">￥{{price}}</p> -->
-                    <p><em>¥</em> 34.7</p>
+                    <p><strong>¥</strong> 34.7</p>
                   </div>
                   <li>飞机模型</li>
                 </div>

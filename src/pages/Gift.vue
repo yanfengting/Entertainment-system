@@ -66,7 +66,7 @@
                 <div style="color: #FF5238;margin-bottom:10px;">
                   <span class="list-price" >
                     <em>¥</em> 34.7
-                  </span>             
+                  </span>
                 </div>
               </div>
             </li>
@@ -123,12 +123,12 @@ export default {
       giftArr: []
     }
   },
-  // 挂载的时候获取列表
-  mounted() {
-    this.axios.get('/api/item/list').then(res => { // url即在mock.js中定义的
-      console.log(res.data) // 打印一下响应数据
-    })
-  },
+  // // 挂载的时候获取列表
+  // mounted() {
+  //   this.axios.get('/api/item/list').then(res => { // url即在mock.js中定义的
+  //     console.log(res.data) // 打印一下响应数据
+  //   })
+  // },
   created: function () {
     console.log('here')
     var userInfo = localStorage.getItem('userInfo')

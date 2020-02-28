@@ -49,7 +49,7 @@
             _this.gameArr = tabs
             _this.tabs = tabs
             // _this.tabs = res.data.data
-            console.log(this.gameArr)
+            // console.log(this.gameArr)
           } else {
             console.log('数据获取失败，请刷新重试')
           }

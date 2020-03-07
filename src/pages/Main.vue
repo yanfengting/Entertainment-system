@@ -293,7 +293,7 @@
           // sessionStorage.setItem('flight', JSON.stringify(this.flight))
           this.axios({
             method: 'get',
-            url: 'api/flightDetail/getUserFlight'
+            url: '/api/flightDetail/getUserFlight'
           }).then((res) => {
             if (res.status === 200) {
               this.flightDetail = res.data.data

@@ -27,7 +27,8 @@ Vue.config.productionTip = false
 axios.interceptors.request.use(function (config) {
   let userInfo = localStorage.getItem('userInfo')
   let token = ''
-  if (userInfo !== undefined && userInfo.length > 10) {
+  // if (userInfo !== undefined && userInfo.length > 10) {
+    if (userInfo && userInfo.length > 10) {
     userInfo = JSON.parse(userInfo)
     if (userInfo.token) {
       token = userInfo.token

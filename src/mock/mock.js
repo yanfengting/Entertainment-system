@@ -2,19 +2,300 @@
 const Mock = require('mockjs')
 // 获取 mock.Random 对象
 const Random = Mock.Random
+// 航班数据
+const FlightData = {
+    'status': 200,
+    'msg': 'OK',
+    'data': {
+        'id': '93403141-9265-11e9-9310-704d7bbd8ffe',
+        'planeNo': 'PN12365', // 飞机号
+        'flightNo': 'FN1245', // 航班号
+        'departDetail': {// 出发地详情
+            'city': '长沙', // 出发城市
+            'airportName': '长沙/黄花'// 出发机场
+        },
+        'arriveDetail': {// 目的地详情
+            'city': '重庆', // 目的地城市
+            'airportName': '重庆/江北'// 目的地机场
+        },
+        'startDate': '2019-01-05 07:00', // 出发时间
+        'endDate': '2019-01-05 23:36' // 达到时间
+    }
+}
+const FlightDetailData = {
+    'status': 200,
+    'msg': 'OK',
+    'data': {
+        'id': '93403141-9265-11e9-9310-704d7bbd8ffe',
+        'planeNo': 'PN12365', // 飞机号
+        'flightNo': 'FN1245', // 航班号
+        'departDetail': { // 出发地详情
+            'city': '长沙', // 出发城市
+            'airportName': '长沙/黄花' // 出发机场
+        },
+        'arriveDetail': { // 目的地详情
+            'city': '重庆', // 目的地城市
+            'airportName': '重庆/江北' // 目的地机场
+        },
+        'transferDetail': [ // 经停详情
+            {
+                'city': '库车', // 城市
+                'airportName': '库车/龟兹'
+            },
+            {
+                'city': '达州',
+                'airportName': '达州/河市'
+            },
+            {
+                'city': '遵义',
+                'airportName': '新舟'
+            }
+        ],
+        'startDate': '2019-01-05 07:00', // 出发时间
+        'endDate': '2019-01-05 23:36', // 达到时间
+        'transferArriveDate': [ // 经停开始时间（与经停顺序对应）
+            '2019-01-05 12:20',
+            '2019-01-05 16:20',
+            '2019-01-05 18:20'
+        ],
+        'transferDepatureDate': [ // 经停结束时间（与经停顺序对应）
+            '2019-01-05 12:30',
+            '2019-01-05 16:30',
+            '2019-01-05 18:30'
+        ]
+    }
+}
 
+const SMSData = {
+    'status': 200,
+    'msg': '',
+    'data': null
+}
+const LoginData = {
+    'status': 200,
+    'msg': '',
+    'data': '93403141-9265-11e9-9310-704d7bbd8ffe' // （data中的数据为用户token）
+}
+const UnfinishedData = {
+    'status': 200,
+    'msg': 'OK',
+    'data': 5
+}
+// 提交升舱信息
+const UpgradeSubmit = {
+    'status': 200,
+    'msg': '',
+    'data': null
+}
+const UpgradeChick = {
+    'status': 200,
+    'msg': 'OK',
+    'data': true // true:有 ，false ：无
+}
+// 获取可升舱座位数据
+const UpgradeData = {
+    'status': 200,
+    'msg': '',
+    'data': [
+        {
+            'classType': '商务舱',
+            'price': 280,
+            'thumbUrl': '@image',
+            'description': '@ctitle(50,90)'
+        },
+        {
+            'classType': '头等舱',
+            'price': 888,
+            'thumbUrl': '@image',
+            'description': '@ctitle(50,90)'
+        }
+    ]
+}
+
+// 提交呼唤铃信息
+const CallbellSubmit = {
+    'status': 200,
+    'msg': '',
+    'data': null
+}
+const CallbellChick = {
+    'status': 200,
+    'msg': 'OK',
+    'data': true // true:有 ，false ：无
+}
+// 获取呼唤铃数据
+const CallbellData = {
+    'status': 200,
+    'msg': '',
+    'data': [
+        {
+            'classType': '商务舱',
+            'price': 280,
+            'thumbUrl': '@image',
+            'description': '@ctitle(50,90)'
+        },
+        {
+            'classType': '头等舱',
+            'price': 888,
+            'thumbUrl': '@image',
+            'description': '@ctitle(50,90)'
+        }
+    ]
+}
+
+// 提交餐食信息
+const FoodSubmit = {
+    'status': 200,
+    'msg': '',
+    'data': null
+}
+const FoodChick = {
+    'status': 200,
+    'msg': 'OK',
+    'data': true // true:有 ，false ：无
+}
+// 获取餐食数据
+const FoodData = {
+    'status': 200,
+    'msg': '',
+    'data': [
+        {
+            'classType': '商务舱',
+            'price': 280,
+            'thumbUrl': '@image',
+            'description': '@ctitle(50,90)'
+        },
+        {
+            'classType': '头等舱',
+            'price': 888,
+            'thumbUrl': '@image',
+            'description': '@ctitle(50,90)'
+        }
+    ]
+}
+
+const AdvData = {
+    'status': 200,
+    'msg': 'OK',
+    'data': [
+        {
+            'id': '2advadvadv0f5c4ba-83d4-46c1-a38d-e8ef1c43cff2', // ID
+            'src': '@image', // 广告资源位置
+            'duration': 1, // 持续时间
+            'priority': 106, // 优先级
+            'resourceId': '50c6c33b-5ee5-4915-8498-59c16e57c0sa', // 跳转的资源id（当resourceType=4时 该字段内容为资源下载的下载地址）
+            'type': 1, // 广告类型（1图片，2视频）
+            'resourceType': 1 // 广告跳转类型（1：目的地推荐 2：商城 3：富文本4：资源下载，）
+        },
+        {
+            'id': '20f5c4ba-83d4-46c1-a38d-e8ef1c43cff3',
+            'src': 'http://118.178.84.155:88/test/test/safety/safetyfile_6502155a120f53d7743c6fca8bea253a.mp4',
+            'duration': 12,
+            'priority': 100,
+            'resourceId': '50c6c33b-5ee5-4915-8498-59c16e57c0sa',
+            'type': 2,
+            'resourceType': 1
+        }
+    ]
+}
+
+const BrandData = {
+    'status': 200,
+    'msg': '',
+    'data': [
+        {
+            'title': '企业介绍',
+            'content': '<p>...</p>'
+        },
+        {
+            'title': '发展历程',
+            'content': '<p>...</p>'
+        }
+    ]
+}
+const SalesData = {
+    'status': 200,
+    'msg': '',
+    'data': [
+        {
+            'title': '库尔勒->重庆->深圳',
+            'titleImg': '@image',
+            'content': '<p>...</p>',
+            'descrip': '标题下面的描述信息'
+        },
+        {
+            'title': '重庆->北京->通辽',
+            'titleImg': '@image',
+            'content': '<p>...</p>',
+            'descrip': '标题下面的描述信息'
+        }
+    ]
+}
+const RouteData = {
+    'status': 200,
+    'msg': '',
+    'data': [
+        {
+            'title': '库尔勒->重庆->深圳',
+            'content': '<p>...</p>'
+        },
+        {
+            'title': '重庆->北京->通辽',
+            'content': '<p>...</p>'
+        }
+    ]
+}
+const SafetyData = {
+    'status': 200,
+    'msg': 'OK',
+    'data': [
+        {
+            'id': 'bee87ecb-7555-11e9-b816-704d7bbd8ffe',
+            'content': '<p>这是一段文字+图片的描述</p>',
+            'type': 'html',
+            'title': '安全须知文档',
+            'videoUrl': null
+        }
+    ]
+}
+const TripData = {
+    'status': 200,
+    'msg': '',
+    'data': [
+        {}
+    ]
+}
+const DesData = {
+    'status': 200,
+    'msg': '',
+    'data': {
+        'city': '扬州',
+        'topic': [
+            {
+                'title': '游玩攻略',
+                'titleImg': '@image',
+                'content': '<p>...</p>'
+            },
+            {
+                'title': '美食推荐',
+                'titleImg': '@image',
+                'content': '<p>...</p>'
+            }
+        ] 
+    }
+}
 // 创建模拟数据
 function creatGetMock () {
-const getMock = Mock.mock({
-    'list|1-10': [{
-    'id|+1': 1
-    }]
-})
-return getMock
+    const getMock = Mock.mock({
+        'list|1-10': [{
+        'id|+1': 1
+        }]
+    })
+    return getMock
 }
 
 // mock新闻数据，包括新闻标题title、内容content、创建时间createdTime
-const produceNewsData = function () {
+const NewsData = function () {
   let newsList = []
   for (let i = 0; i < 20; i++) {
   let newNewsObject = {
@@ -28,7 +309,7 @@ const produceNewsData = function () {
 }
 
 // 游戏
-const GamesData = {
+const GameData = {
     'status': 200,
     'msg': '',
     'data': [
@@ -36,9 +317,9 @@ const GamesData = {
             'type': '益智',
             'items|12': [
                 {
-                    'name': '@word(2,8)',
+                    'name': '@cword(2,8)',
                     'src': '@image',
-                    'poster': 'http://',
+                    'poster': ['@image(`1125x800`)'],
                     'thumbs': ['@image(‘40x40‘,‘#c33‘)', '@image(‘40x40‘,‘#c33‘)'],
                     'description': '@ctitle(20,60)'
                 }
@@ -48,9 +329,9 @@ const GamesData = {
             'type': '竞技',
             'items|12': [
                 {
-                    'name': '@cname',
+                    'name': '@cword(2,8)',
                     'src': '@image',
-                    'poster': 'http://',
+                    'poster': ['@image(`1125x800`)'],
                     'thumbs': ['@image(‘40x40‘,‘#c33‘)', '@image(‘40x40‘,‘#c33‘)'],
                     'description': '@ctitle(20,60)'
                 }
@@ -58,7 +339,37 @@ const GamesData = {
         }
     ]
 }
-
+// 音乐
+const MusicData = {
+    'status': 200,
+    'msg': '',
+    'data': [
+        {
+            'type': '流行',
+            'items': [
+                {
+                    'name': '静止',
+                    'singer': '杨乃文',
+                    'src': 'http://',
+                    'lyrics': 'http://',
+                    'duration': '200' // 时长
+                }
+            ]
+        },
+        {
+            'type': '民谣',
+            'items': [
+                {
+                    'name': '不会说话的爱情',
+                    'singer': '小河',
+                    'src': 'http://',
+                    'lyrics': 'http://',
+                    'duration': '200' // 时长
+                }
+            ]
+        }
+    ]
+}
 // 视频
 const VideosData = {
     'status': 200,
@@ -69,7 +380,7 @@ const VideosData = {
         'items|12': [
             {
                 'name': '@cword(5,8)',
-                'duration': '@date("y.MM.dd")',
+                'duration': '@date(`y.MM.dd`)',
                 'type': '动作',
                 'score': '5-9.0-10',
                 'description': '@ctitle(10,20)',
@@ -93,15 +404,136 @@ let shopdata = Mock.mock({
             'type|1': [ '文创', '航鲜', '旅游' ],
             'thumbUrls': [ '@image(‘#c33‘)', '@image(‘40x40‘,‘#c33‘)', '@image(‘40x40‘,‘#c33‘)', '@image(‘40x40‘,‘#c33‘)' ],
             'isfree|1': [0, 1], // 0收费 1免费
-            'urlPoster': ['@image("100x100")']
+            'urlPoster': ['@image(`1125x800`)']
         }
     ]
 })
-// 三个参数。第一个路径，第二个请求方式post/get，第三个回调，返回值
-Mock.mock(/\/api\/item\/list[\s\S]*?/, 'get', () => { return shopdata })
+const ItemSubmit = {
+    'status': 200,
+    'msg': '',
+    'data': null
+}
 
-Mock.mock('/api/game/list', GamesData)
+const VideoData = {
+    'status': 200,
+    'msg': '',
+    'data': [
+        {
+            'type': '影视',
+            'items': [
+                {
+                    'name': '战狼2',
+                    'duration': '01:30:40',
+                    'type': '动作',
+                    'score': '9.0',
+                    'description': '...',
+                    'poster': 'http://',
+                    'thumbs': ['http://...', 'http://']
+                }
+            ]
+        },
+        {
+            'type': '短视频',
+            'items': [
+                {
+                    'name': '老司机神操作躲过大卡车',
+                    'duration': '00:02:31',
+                    'type': null,
+                    'score': null,
+                    'description': '...',
+                    'poster': null,
+                    'thumbs': null
+                }
+            ]
+        }
+    ]
+}
+const EbookData = {
+    'status': 200,
+    'msg': 'OK',
+    'data': [
+        {
+            'id': 1,
+            'type': '小说'
+        }
+    ]
+}
+const OrderData = {
+    'status': 200,
+    'msg': '',
+    'data': [
+        {
+            'id': '2e4b7a05-2e27-4b9c-a527-dd3ef62cf278',
+            'orderType': 'FO',
+            'num': 2,
+            'orderNo': '104568752',
+            'totalPrice': 56,
+            'item': '米饭',
+            'price': 28,
+            'status': '已完成'
+        },
+        {
+            'id': '2e4b7a05-2e27-4b9c-a527-dd3ef62c2568',
+            'orderType': 'FO',
+            'num': 1,
+            'orderNo': '104568752',
+            'totalPrice': 28,
+            'item': '米饭',
+            'price': 28,
+            'status': '待确认'
+        }
+    ]
+}
+
+const FeedbackData = {
+    'status': 200,
+    'msg': '',
+    'data': null
+}
+// 三个参数。第一个路径，第二个请求方式post/get，第三个回调，返回值
+Mock.mock('/api/flightDetail/getUserFlight', 'get', FlightDetailData)
+Mock.mock('/api/flightDetail/get', 'get', FlightData)
+
+Mock.mock(/\/api\/item\/list[\s\S]*?/, 'get', () => { return shopdata })
+Mock.mock('/api/item/submit', 'post', ItemSubmit)
+
+Mock.mock(/\/api\/adv\/list[\s\S]*?/, 'get', AdvData)
+// 升舱
+Mock.mock('/api/upgrade/chickUsable', 'get', UpgradeChick)
+Mock.mock('/api/upgrade/list', UpgradeData)
+Mock.mock('/api/upgrade/submit', 'post', UpgradeSubmit)
+// 呼唤铃
+Mock.mock('/api/callbell/list', 'get', CallbellChick)
+Mock.mock('/api/callbell/chickUsable', 'get', CallbellData)
+Mock.mock('/api/callbell/submit', 'post', CallbellSubmit)
+// 餐食
+Mock.mock('/api/food/chickUsable', 'get', FoodChick)
+Mock.mock('/api/food/list', 'get', FoodData)
+Mock.mock('/api/food/submit', 'post', FoodSubmit)
+// 品牌介绍数据
+Mock.mock('/api/brand/view', 'get', BrandData)
+Mock.mock('/api/sales/view', 'get', SalesData)
+Mock.mock('/api/route/view', 'get', RouteData)
+
+Mock.mock('/api/safety/view', 'get', SafetyData)
+Mock.mock('/api/trip/list', 'get', TripData)
+Mock.mock('/api/destination/view', 'get', DesData)
+
+Mock.mock('/api/order/unfinished', UnfinishedData)
+Mock.mock('/api/order/list', OrderData)
+
 Mock.mock('/api/film/listType', VideosData)
+
+Mock.mock('/api/video/list', VideoData)
+Mock.mock('/api/music/list', MusicData)
+Mock.mock('/api/game/list', GameData)
+Mock.mock('/api/news/list', NewsData)
+Mock.mock('/api/ebook/listType', EbookData)
+
+Mock.mock('/api/sms/send', 'post', SMSData)
+Mock.mock('/api/feedback/submit', 'post', FeedbackData)
+
+Mock.mock(/\/api\/user\/login[\s\S]*?/, 'post', LoginData)
 
 //  设置全局延时 没有延时的话有时候会检测不到数据变化 建议保留
 // 设置所有ajax请求的超时时间，模拟网络传输耗时

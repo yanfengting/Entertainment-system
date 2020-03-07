@@ -108,15 +108,15 @@
       }
       // that = this.online
       let _self = this
-
-      this.axios.get('/api/4g/status', { emulateJSON: true })
+      // /api/4g/status 4g这个接口是有权限的,所以请求的根路径
+      this.axios.get('', { emulateJSON: true })
         .then(function (response) {
           // 登录后跳转的页面
           if (response.data.status === 200) {
-            // registryToast.showToast('网络连接成功')
+            registryToast.showToast('网络连接成功')
             _self.online = true
           } else {
-            // registryToast.showToast('离线状态')
+            registryToast.showToast('离线状态')
             _self.online = false
           }
         }, function (error) {
@@ -124,8 +124,9 @@
         })
       this.axios({
         method: 'get',
-        url: 'api/flightDetail/get'
+        url: '/api/flightDetail/get'
       }).then((res) => {
+        // console.log(res)
         if (res.status === 200) {
           this.flight = res.data.data
         } else {
@@ -158,7 +159,8 @@
         var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1})|(17[0-9]{1}))+\d{8})$/ // 验证是不是以13,15,18,17开头的数字
         if (this.loginForm.tel === '') {
           this.error(4)
-        } else if (this.loginForm.tel.length !== 11) {
+        // } else if (this.loginForm.tel.length !== 11) {
+        } else if (this.loginForm && this.loginForm.tel && this.loginForm.tel.length !== 11) {
           this.error(4)
         } else if (!myreg.test(this.loginForm.tel)) {
           this.error(4)
@@ -215,7 +217,8 @@
           } else if (this.loginForm.tel === '') {
             registryToast.showToast('请输入手机号！')
             this.error(4)
-          } else if (this.loginForm.tel.length !== 11) {
+          // } else if (this.loginForm.tel.length !== 11) {
+          } else if (this.loginForm && this.loginForm.tel && this.loginForm.tel.length !== 11) {
             registryToast.showToast('请输入11位的手机号码！')
             this.error(4)
           } else if (!myreg.test(this.loginForm.tel)) {
@@ -263,7 +266,8 @@
           } else if (this.loginForm.tel === '') {
             registryToast.showToast('请输入手机号！')
             this.error(4)
-          } else if (this.loginForm.tel.length !== 11) {
+          // } else if (this.loginForm.tel.length !== 11) {
+          } else if (this.loginForm && this.loginForm.tel && this.loginForm.tel.length !== 11) {
             this.error(4)
             registryToast.showToast('请输入11位的手机号码！')
           } else if (!myreg.test(this.loginForm.tel)) {
@@ -278,7 +282,7 @@
           } else if (this.loginForm.check === false) {
             registryToast.showToast('请确认勾选华夏航空娱乐系统安全须知！')
           } else {
-            console.log(this.loginForm)
+            // console.log(this.loginForm)
             // this.thisAjax()
             this.axios({
               method: 'post',

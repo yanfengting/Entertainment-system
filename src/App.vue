@@ -24,12 +24,12 @@
     },
     // // 挂载的时候获取新闻列表
     // mounted() {
-    //   this.axios.get('/api/item/list').then(res => { // url即在mock.js中定义的
+    //   this.axios.get('/api/flightDetail/get').then(res => { // url即在mock.js中定义的
     //     console.log(res.data) // 打印一下响应数据
     //   })
     // },
     methods: {
-      /* connectWebSocket() {
+      connectWebSocket() {
         this.initWebSocket()
         let _this = this
         setTimeout(function () {
@@ -44,7 +44,7 @@
         this.websock.onerror = this.websocketonerror
         this.websock.onmessage = this.websocketonmessage
         this.websock.onclose = this.websocketclose
-      }, */
+      },
       exitFullscreen() {
         var de = document
         try {
@@ -59,7 +59,7 @@
           console.error('不支持 exitFullscreen', e)
         }
       },
-      /* websocketonopen() {
+      websocketonopen() {
         this.lockReconnect = true
         console.log('WebSocket连接成功')
       },
@@ -98,7 +98,7 @@
         } else {
           this.$store.commit('setCurHeight', data)
         }
-      }, */
+      },
       showRadio(msg, show) {
         let alert = this.$dialog(msg, 'my-radio', false)
         this.opAudio(alert, show)
@@ -139,14 +139,14 @@
         } else {
           alert.hide()
         }
-      }
-      /* websocketsend(agentData) { // 数据发送
+      },
+      websocketsend(agentData) { // 数据发送
         this.websock.send(agentData)
       },
       websocketclose(e) { // 关闭
         this.initWebSocket()
         console.log('connection closed (' + e.code + ')')
-      } */
+      }
     }
   }
 </script>

@@ -210,7 +210,7 @@
             // 普通行程
             this.axios({
                 method: 'get',
-                url: 'api/flightDetail/getUserFlight'
+                url: '/api/flightDetail/getUserFlight'
             }).then((res) => {
                 if (res.status === 200) {
                     let datas = res.data.data // 航班详情
@@ -244,6 +244,7 @@
                 method: 'get',
                 url: '/api/transitUser/get'
             }).then((res) => {
+                console.log(res)
                 if (res.data.status === 200) {
                     this.tcflightDetail = res.data.data
                     // 通程中转时间

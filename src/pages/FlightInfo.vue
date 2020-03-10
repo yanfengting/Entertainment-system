@@ -147,8 +147,9 @@
         let _self = this
         this.axios({
           method: 'get',
-          url: 'api/flightDetail/getUserFlight'
+          url: '/api/flightDetail/getUserFlight'
         }).then((res) => {
+          // console.log(res)
           res = res.data
           if (res.status === 200) {
             this.formatFlightInfo(flag, res.data, transUser)

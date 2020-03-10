@@ -249,7 +249,7 @@
       })
       this.axios({
         method: 'post',
-        url: 'api/order/unfinished'
+        url: '/api/order/unfinished'
       }).then((res) => {
         // console.log(res)
         if (res.status === 200) {

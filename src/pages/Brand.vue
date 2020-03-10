@@ -4,7 +4,7 @@
     <div class="view-wrapper" id="brand">
       <cube-scroll-nav :current="current" @change="changeHandler" ref="scroll">
         <cube-scroll-nav-panel v-for="item in brandArr" :key="item.title" :label="item.title">
-          <div class="item-content" v-html="item.content"></div>
+          <div class="item-content" style="font-size:13px" v-html="item.content"></div>
         </cube-scroll-nav-panel>
         <div class="bottom-desp" v-show="bottomshow">
           <hr>

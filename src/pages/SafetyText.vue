@@ -1,7 +1,7 @@
 <template>
   <div>
     <Nav></Nav>
-    <div class="safety-content" v-for="(l) in safety_text" v-bind:key="l">
+    <div class="safety-content" v-for="(l,index) in safety_text" v-bind:key="index">
       {{l.title}}
       <p v-html="l.content"></p>
     </div>

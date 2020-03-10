@@ -32,7 +32,7 @@
       this.axios({
         method: 'get',
         url: '/api/route/view',
-        headers: {'token': this.userInfo.token}
+        headers: { 'token': this.userInfo.token }
       }).then((res) => {
         console.log(res)
         if (res.data.status === 200) {

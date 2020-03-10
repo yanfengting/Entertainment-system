@@ -184,6 +184,7 @@
     font-size: 16
     font-weight: 700
     color: #424B55
+    line-height: 20px
 
   .gameinfo
     overflow hidden

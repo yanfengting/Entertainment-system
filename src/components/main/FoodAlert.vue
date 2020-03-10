@@ -7,14 +7,14 @@
                 <div class="img-wrap">
                   <img :src="thumbUrl" alt="">
                 </div>
-                <div class="main">
+                <div class="main" >
                   <div class="price-wrap">
                     <p class="food-price"><strong>¥</strong>{{price}}<span>/份</span></p>
                   </div>
-                  <div class="product-delcom" style="position: absolute;bottom: 20px;" v-if="i==-1">
+                  <div class="product-delcom" style="margin-left:-5px" v-if="i==-1">
                     <p style="">选择餐食种类</p>
                   </div>
-                  <div class="product-delcom" style="position: absolute;bottom: 20px;" v-if="i!==-1">
+                  <div class="product-delcom" style="margin-left:-5px" v-if="i!==-1">
                     <p style="">已选<span>{{type}}</span></p>
                     <p >{{description}}</p>
                   </div>
@@ -255,6 +255,21 @@
             })
         }
       },
+      /* setInputStatus() {
+        let _self = this
+        this.axios.get('/api/4g/status', { emulateJSON: true })
+          .then(function (response) {
+            if (response.data.status === 200) {
+              // 登录后跳转的页面
+              _self.readonly = false
+            } else {
+              _self.readonly = true
+            }
+            console.log(_self.readonly)
+          }, function (error) {
+            console.log('4g请求失败', error)
+          })
+      }, */
       setInputStatus() {
         let _self = this
         this.axios.get('/api/4g/status', { emulateJSON: true })

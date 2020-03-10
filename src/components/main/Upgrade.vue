@@ -44,6 +44,7 @@
           url: 'api/upgrade/chickUsable'
         }).then((res) => {
           if (res.data.status === 200) {
+            // console.log(res)
             if (!res.data.data) {
               this.$dialog('该功能已关闭，暂时无法使用', 'my-eable')
               return

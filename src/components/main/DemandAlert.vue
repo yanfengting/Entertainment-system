@@ -8,10 +8,10 @@
               <img :src="thumbUrl" alt>
             </div>
             <div class="main">
-              <div class="product-delcom" style="margin-left:-10px;margin-left:-10px;position: absolute;" v-if="i==-1">
+              <div class="product-delcom" style="position: absolute;" v-if="i==-1">
                 <p style="">选择种类</p>
               </div>
-              <div class="product-delcom" style="margin-left:-10px;margin-left:-10px;position: absolute;" v-if="i!==-1">
+              <div class="product-delcom" style="position: absolute;" v-if="i!==-1">
                 <p style="">已选<span>{{type}}</span></p>
                 <p >{{description}}</p>
               </div>
@@ -81,7 +81,7 @@
         thumbUrl: null,
         i: -1,
         skuArr: [],
-        // price: '',
+        price: null,
         num: 1,
         is_sku: this.issku, // 规格弹窗
         readonly: true
@@ -100,7 +100,7 @@
       // console.log('tel: ' + this.userInfo.tel)
       this.axios({
           method: 'get',
-          url: '/api/callbell/list'
+          url: 'api/callbell/list'
         }
       ).then((res) => {
         // console.log(res)

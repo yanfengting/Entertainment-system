@@ -107,11 +107,11 @@ export default {
       // console.log("轮播图")
       // console.log(res)
       if (res.data.status === 200) {
-        if(res.data.data.length != 0){
+        if (res.data.data.length != 0) {
           this.items = res.data.data
         }
       } else {
-        console.log("轮播图获取失败")
+        console.log('轮播图获取失败')
       }
     })
     this.axios({

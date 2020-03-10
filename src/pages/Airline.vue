@@ -14,8 +14,8 @@
     <!--</div>-->
     <!--</a>-->
     <a class="block-item ">
-      <div class="ariline-image" v-for="(l) in salesArr" @click="arilie_detail(l.title,l.titleImg,l.content,l.descrip)"
-           width="100%" v-bind:key="l">
+      <div class="ariline-image" v-for="(l,index) in salesArr" @click="arilie_detail(l.title,l.titleImg,l.content,l.descrip)"
+           width="100%" v-bind:key="index">
         <img width="100%"
              style="height:60%;border-top-right-radius: 5px;border-top-left-radius: 5px;box-shadow: 0 1.176vw 3.529vw rgba(0,0,0,.08);"
              v-bind:src="l.titleImg">

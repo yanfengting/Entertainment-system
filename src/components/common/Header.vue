@@ -106,7 +106,7 @@
           method: 'get',
           url: '/api/flightDetail/getUserFlight'
         }).then((res) => {
-          console.log(res)
+          // console.log(res)
           if (res.status === 200) {
             this.flightDetail = res.data.data
             this.startDate = res.data.data.startDate.split(' ')[1]

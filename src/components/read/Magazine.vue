@@ -7,7 +7,7 @@
       <cube-swipe>
         <div class="bscroll-content">
           <ul class="list-unstyled vod-item-img ff-img-140">
-            <li class="col-xs-4" v-for="(item) in swipeData" @click="toDetail(item)">
+            <li class="col-xs-4" v-for="(item,index) in swipeData" v-bind:key=index @click="toDetail(item)">
               <div class="image magazineimg">
                 <div class="action-bak-height"
                      :style="{'width': '88%', 'background': 'url('+item.urlPoster+') no-repeat', 'background-size': '100% 100%', 'background-position': 'center center' }">
@@ -66,7 +66,7 @@
         console.log('click item:', item)
       },
       toDetail(item) {
-        this.$router.push({path: '/magDetail', query: {'id': item.id}})
+        this.$router.push({ path: '/magDetail', query: { 'id': item.id } })
       }
     }
   }

@@ -31,7 +31,7 @@
     </div>
     <!--</cube-scroll>-->
     <div class="bottom" style="position: fixed;bottom: 0;" v-show="show">
-      <div class="img" v-for="(l,index) in advList" v-bind:key='index' 
+      <div class="img" v-for="(l,index) in advList" v-bind:key='index'
            @click="showImgPrv(index)"
            :style="{'background-image': 'url('+l.src+')' , 'background-repeat': 'no-repeat' , 'background-size': '100% auto' , 'background-position': 'bottom center'}">
         <!--<a :href="l.src" >-->
@@ -116,7 +116,7 @@
             }
           }
         }
-        this.$createImagePreview({...params}).show()
+        this.$createImagePreview({ ...params }).show()
       },
       cancel(orderNo, orderType) {
         this.axios({

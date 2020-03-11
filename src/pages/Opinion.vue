@@ -104,7 +104,7 @@
       this.userInfo = JSON.parse(userInfo) // 转为JSON
       this.axios({
         method: 'post',
-        url: 'api/order/unfinished'
+        url: '/api/order/unfinished'
       }).then((res) => {
         // console.log(res)
         if (res.status === 200) {
@@ -115,8 +115,8 @@
       })
       this.axios({
         method: 'get',
-        url: 'api/flightDetail/get',
-        headers: {'token': this.userInfo.token}
+        url: '/api/flightDetail/get',
+        headers: { 'token': this.userInfo.token }
       }).then((res) => {
         if (res.status === 200) {
           this.flightDetail = res.data.data
@@ -162,7 +162,7 @@
           this.errors.push('请对整体印象作出评价！')
         } /*else if (this.value3 === '') {
           this.errors.push('请输入意见或建议！')
-        }*/ else if (this.upload === '') {
+        }*/else if (this.upload === '') {
           this.errors.push('请选择至少一张图片！')
         } else if (this.phone === '') {
           this.errors.push('请输入手机号！')
@@ -323,7 +323,7 @@
   }
 
   .opinion-content {
-    background-color: rgba(247, 249, 252, 1);
+    /* background-color: rgba(247, 249, 252, 1); */
   }
 </style>
 <style lang="stylus" scoped>

@@ -72,10 +72,10 @@
       this.axios.get('/api/member/get?phone=' + this.userInfo.tel).then(res => {
         console.log(res)
         if (res.data.status === 200) {
-          if (res.data.data !== null) {
-            this.member = res.data.data;
-            this.grade = res.data.data.grade;
-            this.integral = res.data.data.integral;
+          if (res.data.data.length !== null) {
+            this.member = res.data.data
+            this.grade = res.data.data.grade
+            this.integral = res.data.data.integral
           }
         } else {
           console.log('数据获取失败')
@@ -84,7 +84,7 @@
       // 请求订单数据
       this.axios({
         method: 'post',
-        url: 'api/order/unfinished'
+        url: '/api/order/unfinished'
       }).then((res) => {
         // console.log(res)
         if (res.status === 200) {

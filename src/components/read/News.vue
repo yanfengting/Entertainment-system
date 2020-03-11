@@ -91,7 +91,7 @@
           this.$createActionSheet({
             title: '确认要删除吗',
             active: 0,
-            data: [{content: '删除'}],
+            data: [{ content: '删除' }],
             onSelect: () => {
               this.swipeData.splice(index, 1)
             }

@@ -9,7 +9,7 @@
       <cube-swipe>
         <div class="bscroll-content">
           <ul class="list-unstyled vod-item-img ff-img-140">
-            <li class="col-xs-4" v-for="(item) in swipeData" @click="toDetail(item.src)">
+            <li class="col-xs-4" v-for="(item,index) in swipeData" @click="toDetail(item.src)" v-bind:key=index>
               <p class="image">
                 <a>
                   <img class="img-responsive img-thumbnail ff-img"
@@ -81,11 +81,11 @@
         this.$refs.scroll.forceUpdate()
       },
       endScroll() {
-       /* const toast = this.$createToast({
+        const toast = this.$createToast({
           time: 1000,
           txt: '没有更多数据了...'
         })
-        toast.show()*/
+        toast.show()
       },
       onScroll(pos) {
       },
@@ -100,7 +100,7 @@
             title: '确认要删除吗',
             active: 0,
             data: [
-              {content: '删除'}
+              { content: '删除' }
             ],
             onSelect: () => {
               this.swipeData.splice(index, 1)

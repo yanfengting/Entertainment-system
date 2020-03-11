@@ -79,7 +79,7 @@
       // color="#00acec"
       let music = this.getPlayMusic()
       if (!keep) {
-        this.$store.commit('playMusic', {'src': music.src, 'musicName': music.name, 'duration': music.duration})
+        this.$store.commit('playMusic', { 'src': music.src, 'musicName': music.name, 'duration': music.duration })
       }
       this.getLyric()
 
@@ -146,7 +146,7 @@
       changePlayType: function (type) {
         this.$store.state.playType = type
       },
-      handleLyric({lineNum, txt}) {
+      handleLyric({ lineNum, txt }) {
         let _this = this
         setTimeout(function() {
           _this.currentLineNum = lineNum

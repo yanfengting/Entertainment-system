@@ -1,7 +1,7 @@
 // 引入mockjs
 const Mock = require('mockjs')
 // 获取 mock.Random 对象
-const Random = Mock.Random
+// const Random = Mock.Random
 // 航班数据
 const FlightData = {
     'status': 200,
@@ -100,13 +100,13 @@ const UpgradeData = {
         {
             'classType': '商务舱',
             'price': 280,
-            'thumbUrl': '@image(`144x144`,’#b8b8b8‘)',
+            'thumbUrl': '@image(`144x144`,’#b8b8b8`)',
             'description': '@ctitle(200,290)'
         },
         {
             'classType': '头等舱',
             'price': 888,
-            'thumbUrl': '@image(`144x144`,‘#fff’)',
+            'thumbUrl': '@image(`144x144`,`#fff’)',
             'description': '@ctitle(200,290)'
         }
     ]
@@ -291,16 +291,16 @@ const RouteData = {
 const SalesData = {
     'status': 200,
     'msg': '',
-    'data': [
+    'data|3': [
         {
             'title': '库尔勒->重庆->深圳',
-            'titleImg': '@image(`120x60`)',
+            'titleImg': '@image(`1200x600`)',
             'content': '<p>@ctitle(400,1000)</p>',
             'descrip': '标题下面的描述信息'
         },
         {
             'title': '重庆->北京->通辽',
-            'titleImg': '@image(`120x60`)',
+            'titleImg': '@image(`1200x600`)',
             'content': '<p>@ctitle(500,1200)</p>',
             'descrip': '标题下面的描述信息'
         }
@@ -343,7 +343,7 @@ const DesData = {
                 'titleImg': '@image(`120x60`)',
                 'content': '<p>...</p>'
             }
-        ] 
+        ]
     }
 }
 
@@ -358,8 +358,8 @@ const GameData = {
                 {
                     'name': '@cword(2,8)',
                     'src': '@image',
-                    'poster': ['@image(`1125x800`)'],
-                    'thumbs': ['@image(‘40x40‘,‘#c33‘)', '@image(‘40x40‘,‘#c33‘)'],
+                    'poster': ['@image(`500x800`)'],
+                    'thumbs': ['@image(`40x40`,`#c33`)', '@image(`40x40`,`#c33`)'],
                     'description': '@ctitle(20,60)'
                 }
             ]
@@ -370,8 +370,8 @@ const GameData = {
                 {
                     'name': '@cword(2,8)',
                     'src': '@image',
-                    'poster': ['@image(`1125x800`)'],
-                    'thumbs': ['@image(‘40x40‘,‘#c33‘)', '@image(‘40x40‘,‘#c33‘)'],
+                    'poster': ['@image(`500x800`)'],
+                    'thumbs': ['@image(`40x40`,`#c33`)', '@image(`40x40`,`#c33`)'],
                     'description': '@ctitle(20,60)'
                 }
             ]
@@ -381,7 +381,7 @@ const GameData = {
 const GameIdData = {
     'status': 200,
     'msg': 'OK',
-    'data':  {
+    'data': {
                     'id': '1eba0854-268e-43e8-bcfc-4a824650hsju',
                     'name': '@ctitle(4,8)',
                     'src': 'http://118.178.84.155:88/test/test/game/gamefile_1a149cee-6943-452a-ae12-b855c654f5ad/index.html',
@@ -391,11 +391,11 @@ const GameIdData = {
                     'position': '22',
                     'gameType': null,
                     'thumbs': [
-                        '@image(`120x60`)',
-                        '@image(`120x60`)',
-                        '@image(`120x60`)',
-                        '@image(`120x60`)',
-                        '@image(`120x60`)'
+                        '@image(`1200x600`)',
+                        '@image(`1200x600`)',
+                        '@image(`1200x600`)',
+                        '@image(`1200x600`)',
+                        '@image(`1200x600`)'
                     ]
                 }
 }
@@ -477,31 +477,32 @@ const ShortListData = {
     'status': 200,
     'msg': 'OK',
     'data': [
-    //  'total': 3, // 总数据条数
-    //     'data': [ // 数据集合
-    //               {
-    //                   'id': '7de6887e-7946-11e9-b9ff-704d7bbd8ffe',
-    //                   'title': '短视频1',
-    //                   'score': '6.5',
-    //                   'duration': 33654,
-    //                   'size': 43453,
-    //                   'urlVideo': '/aaa/aaaaa.mp4'
-    //               },
-    //               {
-    //                   'id': '967344a1-7946-11e9-b9ff-704d7bbd8ffe',
-    //                   'title': '短视频2',
-    //                   'score': '3.9',
-    //                   'duration': 213213,
-    //                   'size': 13213,
-    //                   'urlVideo': '/bbb/bbb.mp4'
-    //           }
-    //     ]
+        { 'total': 2, // 总数据条数
+          'data': [ // 数据集合
+                    {
+                        'id': '7de6887e-7946-11e9-b9ff-704d7bbd8ffe',
+                        'title': '短视频1',
+                        'score': '6.5',
+                        'duration': 33654,
+                        'size': 43453,
+                        'urlVideo': '/aaa/aaaaa.mp4'
+                    },
+                    {
+                        'id': '967344a1-7946-11e9-b9ff-704d7bbd8ffe',
+                        'title': '短视频2',
+                        'score': '3.9',
+                        'duration': 213213,
+                        'size': 13213,
+                        'urlVideo': '/bbb/bbb.mp4'
+                    }
+            ]
+        }
     ]
 }
 const MovieData = {
     'status': 200,
     'msg': 'OK',
-    'data': [
+    'data|6': [
         {
             'id': '496faaec-7a46-11e9-b9ff-704d7bbd8ffe',
             'title': '变形精钢', // 电影名称
@@ -513,7 +514,7 @@ const MovieData = {
             'showtime': '2017-06-08', // 上映时间
             'size': 6546546, // 文件大小
             'urlVideo': '/54546/sadad/aaa.mp4', // 视频地址（全路径）
-            'urlPoster': '@image', // 封面地址（全路径）
+            'urlPoster': '@image(`120x200`)', // 封面地址（全路径）
             'movieType': null,
             'thumbs': [// 剧照 （全路径）
                 '@image',
@@ -531,7 +532,7 @@ const MovieData = {
             'showtime': '2008-06-29',
             'size': 435345,
             'urlVideo': '/sadavx/ddg.mp4',
-            'urlPoster': '@image',
+            'urlPoster': '@image(`120x200`)',
             'movieType': null,
             'thumbs': [
                 '@image'
@@ -539,25 +540,21 @@ const MovieData = {
         }
     ]
 }
-// 商品
+// 商品id
 const ItemIdData = {
     'status': 200,
     'msg': 'OK',
     'data': {
-            'id': '5a0ae803-60ea-11e9-9bed-704d7bbd8ffe',
-            'name': '玩偶', // 商品名称
-            'price': 16.05, // 商品价格
-            'description': '这是一个小孩玩的商品', // 商品描述
-            'type': '文创', // 商品类型：文创、航鲜、旅游
-            'thumbUrls': [
-                '9c7fa89a-7559-11e9-b816-704d7bbd8ffe-1.jpg',
-                '9c7fa89a-7559-11e9-b816-704d7bbd8ffe-2.jpg',
-                '9c7fa89a-7559-11e9-b816-704d7bbd8ffe-3.jpg',
-                '9c7fa89a-7559-11e9-b816-704d7bbd8ffe-4.jpg'
-            ], // 商品图片
-            'isfree': 0 // 0 收费 1 免费
+            'id|1-30': 1,
+            'name': '@cword(5,8)', // 商品名称
+            'price|30-1000': 30, // 商品价格
+            'description': '@ctitle(30,60)', // 商品描述
+            'type|1': [ '文创', '航鲜', '旅游' ],
+            'thumbUrls': [ '@image(`#aaa`)', '@image(`1200x2400`,`#aaa`)', '@image(`1200x2400`,`#ccc`)', '@image(`1200x2400`,`#aaa`)' ],
+            'isfree|1': [0, 1] // 0收费 1免费
         }
 }
+// 列表
 let shopdata = Mock.mock({
     'status': 200,
     'msg': '',
@@ -568,9 +565,9 @@ let shopdata = Mock.mock({
             'price|30-1000': 30, // 随机生成商品价格 在30-1000之间
             'description': '@ctitle(10,20)', // 生成商品信息，长度为10个汉字
             'type|1': [ '文创', '航鲜', '旅游' ],
-            'thumbUrls': [ '@image(‘#c33‘)', '@image(‘40x40‘,‘#c33‘)', '@image(‘40x40‘,‘#c33‘)', '@image(‘40x40‘,‘#c33‘)' ],
+            'thumbUrls': [ '@image(`#c33`)', '@image(`40x40`,`#c33`)', '@image(`40x40`,`#c33`)', '@image(`40x40`,`#c33`)' ],
             'isfree|1': [0, 1], // 0收费 1免费
-            'urlPoster': ['@image(`1125x800`)']
+            'urlPoster': ['@image(`168x168`)']
         }
     ]
 })
@@ -580,44 +577,10 @@ const ItemSubmit = {
     'data': null
 }
 
-const VideoData = {
-    'status': 200,
-    'msg': '',
-    'data': [
-        {
-            'type': '影视',
-            'items': [
-                {
-                    'name': '战狼2',
-                    'duration': '01:30:40',
-                    'type': '动作',
-                    'score': '9.0',
-                    'description': '...',
-                    'poster': 'http://',
-                    'thumbs': ['http://...', 'http://']
-                }
-            ]
-        },
-        {
-            'type': '短视频',
-            'items': [
-                {
-                    'name': '老司机神操作躲过大卡车',
-                    'duration': '00:02:31',
-                    'type': null,
-                    'score': null,
-                    'description': '...',
-                    'poster': null,
-                    'thumbs': null
-                }
-            ]
-        }
-    ]
-}
 const AdvertiseData = {
     'status': 200,
     'msg': 'OK',
-    'data': [
+    'data|6': [
         {
             'id': '93ff1bfa-7936-11e9-b9ff-704d7bbd8ffe',
             'title': '公司宣传片',
@@ -639,6 +602,20 @@ const AdvertiseData = {
             'urlCover': '@image(`120x200`)'
         }
     ]
+}
+const AdvertiseIdData = {
+    'status': 200,
+    'msg': 'OK',
+    'data': {
+        'id': '93ff1bfa-7936-11e9-b9ff-704d7bbd8ffe',
+        'title': '公司宣传片', // 视频民名称
+        'score': '5.6', // 评分
+        'info': '这是公司的宣传片。。。。点击有劲爆内容', // 简介
+        'duration': 3600, // 时长（暂未启用）
+        'size': 36802, // 文件大小
+        'urlVideo': '/aaa/aaa.mp4', // 视频地址（全路径）
+        'urlCover': '@image' // 封面地址（全路径）
+    }
 }
 
 const OrderData = {
@@ -733,7 +710,7 @@ const NewsData = {
 const PeriodicalData = {
     'status': 200,
     'msg': 'OK',
-    'data': [
+    'data|5': [
         {
             'id': '003ef251-72d6-11e9-b816-704d7bbd8ffe', // ID
             'name': '十万个为什么', // 杂志名称
@@ -756,11 +733,11 @@ const PeriodicalIdData = {
     'data|10': [
         {
             'page': 1, // 页码
-            'src': '@image(`120x200`)'// 页码图片
+            'src': '@image(`1200x2000`)'// 页码图片
         },
         {
             'page': 2,
-            'src': '@image(`120x200`)'
+            'src': '@image(`1200x2000`,`#aaa`)'
         }
     ]
 }
@@ -777,13 +754,13 @@ const EbookData = {
 const EbookListData = {
     'status': 200,
     'msg': 'OK',
-    'data': [
+    'data|9': [
         {
             'id': '003ef251-72d6-11e9-b816-704d7bbd8ffe',
             'name': '十万个为什么',
             'author': '未知',
             'src': '/sdad/asda/adadaadfd.pdf',
-            'urlPoster': 'adad',
+            'urlPoster': '@image(`120x200`)',
             'position': 'asda'
         }
     ]
@@ -839,6 +816,7 @@ Mock.mock(/\/api\/short\/list[\s\S]*?/, ShortListData)
 Mock.mock(/\/api\/movie\/list[\s\S]*?/, MovieData)
 // Mock.mock('/api/video/list', VideoData)
 Mock.mock(/\/api\/advertise\/list[\s\S]*?/, AdvertiseData)
+Mock.mock(/\/api\/advertise[\s\S]*?/, AdvertiseIdData)
 
 Mock.mock('/api/music/list', MusicData)
 Mock.mock('/api/game/list', GameData)
@@ -848,7 +826,7 @@ Mock.mock('/api/ebook/listType', EbookData)
 Mock.mock('/api/news/list', NewsData)
 Mock.mock(/\/api\/ebook\/list[\s\S]*?/, EbookListData)
 // 杂志
-Mock.mock('/api/periodical/list', 'get', PeriodicalData)
+Mock.mock(/\/api\/periodical\/list[\s\S]*?/, 'get', PeriodicalData)
 Mock.mock(/\/api\/periodical[\s\S]*?/, 'get', PeriodicalIdData)
 
 Mock.mock('/api/sms/send', 'post', SMSData)

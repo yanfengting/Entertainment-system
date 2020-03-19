@@ -126,7 +126,7 @@
             let _this = this
             // let video = document.getElementById(_this.id_ + '_html5_api')
             _this.play()
-            console.log(this)
+            // console.log(this)
             this.on('play', function () { // 监听播放事件
               // this.play()
             })

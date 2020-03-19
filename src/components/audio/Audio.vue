@@ -67,7 +67,7 @@
       _bfb: function () {
         let bfb = this.$store.state.timeNowInt / this.$store.state.timeDurationInt
         this.$store.state.intDfb = bfb * 100 + '%'
-        // console.log(this.$store.state.intDfb)
+        console.log(this.$store.state.intDfb)
       },
       _formatTime: function (s) {
         return this._addzero(Math.floor(s / 60)) + ':' + this._addzero(s % 60)

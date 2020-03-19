@@ -56,7 +56,7 @@ export default {
     // 页面切换时触发
     onChange(current) {
       // 切到某个tab下，再去请求数据
-      console.log(current)
+      // console.log(current)
       this.index = current
       const component = this.$refs.component[current]
       component.fetch && component.fetch()

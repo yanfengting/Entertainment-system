@@ -53,7 +53,7 @@
         document.getElementById('upload_file').click()
       },
       fileChange(el) {
-        console.log(el) // input整个标签
+        // console.log(el) // input整个标签
         if (!el.target.files[0].size) return
         this.fileList(el.target)
         el.target.value = ''
@@ -73,7 +73,7 @@
       },
       fileList(fileList) {
         let files = fileList.files
-        console.log(files)
+        // console.log(files)
         for (let i = 0; i < files.length; i++) {
           // 判断是否为文件夹
           // eslint-disable-next-line eqeqeq
@@ -135,7 +135,7 @@
               _this.imgList.push({
                 file
               })
-              console.log(_this.imgList)
+              // console.log(_this.imgList)
             }
             image.src = file.src
           }

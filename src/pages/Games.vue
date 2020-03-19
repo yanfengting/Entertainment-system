@@ -34,7 +34,7 @@
       }
       this.axios.get('/api/game/list').then(
         res => {
-          console.log(res)
+          // console.log(res)
           if (res.status === 200) {
             let tabs = []
             for (let i = 0; i < res.data.data.length; i++) {

@@ -106,7 +106,7 @@
         this.page = this.page + 1
         this.axios.get('/api/short/list?typeId=' + id + '&page=' + this.page + '&length=' + this.length).then(
           res => {
-            console.log('timeout', res)
+            // console.log('timeout', res)
             if (res.data.status === 601) {
               this.$refs.scroll.forceUpdate()
               registryToast.showToast('服务器繁忙请重试')

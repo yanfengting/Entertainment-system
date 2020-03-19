@@ -31,7 +31,7 @@
       <div style="position: relative;display: flex" >
         <ul style="clear: both;display: block; width:100%;">
           <li  v-for="(item, index) in giftArr" :key="index"
-              @click="shopDetail" style="margin:5px;;float:left;width:47%;border-radius:10px; box-shadow:0px 3px 8px rgba(0,45,128,0.2);" >
+              @click="shopDetail(item.id)" style="margin:5px;;float:left;width:47%;border-radius:10px; box-shadow:0px 3px 8px rgba(0,45,128,0.2);" >
               <div class="list-img">
                 <img v-bind:src="item.urlPoster">
               </div>
@@ -41,7 +41,7 @@
               <div class="list-mes-item list-mes">
                 <div style="color: #FF5238;margin-bottom:10px;">
                   <span class="list-price" v-if="item.isfree === 0">
-                    <em>¥</em>{{item.price}}
+                    <strong>￥</strong>{{item.price}}
                   </span>
                   <span class="list-price" v-else>
                     免费
@@ -130,14 +130,14 @@ export default {
   //   })
   // },
   created: function () {
-    console.log('here')
+    // console.log('here')
     var userInfo = localStorage.getItem('userInfo')
     this.userInfo = JSON.parse(userInfo) // 转为JSON
     this.axios({
       method: 'get',
       url: '/api/item/list?type=文创'
     }).then((res) => {
-      console.log(res)
+      // console.log(res)
       if (res.data.status === 200) {
         this.giftArr = res.data.data
         // console.log(this.skuArr)
@@ -163,11 +163,12 @@ export default {
     lvyou() {
       this.$router.push({ path: '/giftLvYou' })
     },
-    shopDetail () {
+    shopDetail (id) {
       this.$router.push({
         path: '/shopdetail',
         query: {
-          seat: this.userInfo.seat
+          'seat': this.userInfo.seat,
+          'id': id
         }
       })
     }
@@ -276,9 +277,7 @@ p {
 }
 
 .list-title {
-  margin-left:10px;
-  margin-right:10px;
-  margin-bottom:5px;
+  margin:10px;
   font-size: 13px;
   color: #333333;
   line-height:20px;
@@ -286,7 +285,7 @@ p {
 .list-price {
   margin-left:10px;
   margin-right:10px;
-  font-size: 15px;
+  font-size: 16px;
   font-family:Source Han Sans SC;
   font-weight:bold;
   color:rgba(255,82,56,1);

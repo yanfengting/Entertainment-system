@@ -61,7 +61,7 @@
       let _this = this
       this.axios.get('/api/news/list').then(
         res => {
-          console.log(res)
+          // console.log(res)
           if (res.status === 200) {
             this.newsArr = res.data.data
             setTimeout(function () {

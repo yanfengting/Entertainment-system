@@ -94,7 +94,7 @@
         }, 1000)
       })
       // let name = this.$route.params.paramsName // 获取传入参数的值 不是router 而是route
-      console.log(name)
+      // console.log(name)
     },
     methods: {
       showImgPrv(index) {
@@ -127,7 +127,7 @@
             'orderType': orderType
           }
         }).then((res) => {
-          console.log(res)
+          // console.log(res)
           if (res.data.status === 200) {
             this.showSuccess()
             this.axios({

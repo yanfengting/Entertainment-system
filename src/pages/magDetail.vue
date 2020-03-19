@@ -51,7 +51,7 @@
     mounted() {
       let id = this.$route.query.id
       let _this = this
-      this.axios.get('api/periodical/' + id).then(function (res) {
+      this.axios.get('/api/periodical/' + id).then(function (res) {
         if (res.data.status === 200) {
           res.data.data.forEach(function (item) {
             _this.resData.push(item.src)

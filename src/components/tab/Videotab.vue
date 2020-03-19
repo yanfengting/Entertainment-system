@@ -67,7 +67,7 @@
       }
     },
     created() {
-      console.log(this.nav_current) // = this.tabsName[0]
+      // console.log(this.nav_current) // = this.tabsName[0]
     },
     methods: {
       // 页面切换时触发
@@ -79,7 +79,7 @@
         })
       },
       changeHandle(cur) {
-        console.log(cur)
+        // console.log(cur)
         this.nav_current = cur
       },
       onScroll(pos) {

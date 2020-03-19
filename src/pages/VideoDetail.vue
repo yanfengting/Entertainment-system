@@ -84,7 +84,7 @@
           }, function onPlayerReady() {
             let _this = this
             _this.play()
-            console.log(this)
+            // console.log(this)
             this.on('play', function () { // 监听播放事件
               // this.play()
             })
@@ -119,7 +119,7 @@
       _self.$video(videos).dispose()
     },
     components: {
-      Nav, VideoRate
+      Nav, VideoRate 
     }
   }
 </script>

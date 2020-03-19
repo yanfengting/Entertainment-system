@@ -27,7 +27,7 @@
       let _this = this
       this.axios.get('/api/music/list').then(
         res => {
-          console.log(res)
+          // console.log(res)
           if (res.status === 200) {
             let tabs = []
             let musicList = []

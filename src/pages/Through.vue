@@ -34,7 +34,7 @@
         url: '/api/route/view',
         headers: { 'token': this.userInfo.token }
       }).then((res) => {
-        console.log(res)
+        // console.log(res)
         if (res.data.status === 200) {
           this.brandArr = res.data.data
           this.current = res.data.data[0].title

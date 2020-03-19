@@ -56,6 +56,7 @@
       // api/ebook/list
       this.axios.get('/api/ebook/list?typeId=' + this.contentdata).then(
         res => {
+          console.log(res)
           if (res.status === 200) {
             this.swipeData = res.data.data
             setTimeout(function () {

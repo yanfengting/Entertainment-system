@@ -41,7 +41,7 @@
       let _this = this
       this.axios.get('/api/film/listType').then(
         res => {
-          console.log(res)
+          // console.log(res)
           if (res.status === 200) {
             // this.videoArr = res.data.data
             // console.log(this.videoArr)
@@ -97,7 +97,7 @@
         }
       }
     },
-    components: {Nav, Videotab}
+    components: { Nav, Videotab }
   }
 </script>
 <style lang="stylus">

@@ -59,13 +59,13 @@
       this.axios({
         method: 'get',
         url: '/api/sales/view',
-        headers: {'token': this.userInfo.token}
+        headers: { 'token': this.userInfo.token }
       }).then((res) => {
-        console.log(res)
+        // console.log(res)
         if (res.data.status === 200) {
           this.salesArr = res.data.data
           this.bottomshow = true
-          console.log(this.salesArr)
+          // console.log(this.salesArr)
         } else if (res.data.status === 401) {
           this.$router.replace('/')
         } else {

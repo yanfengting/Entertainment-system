@@ -68,7 +68,7 @@
     computed: {
       selectedLabel: {
         get() {
-          console.log(this.initialIndex)
+          // console.log(this.initialIndex)
           return this.tabs[this.initialIndex].label === 'undefined' ? '' : this.tabs[this.initialIndex].label
         },
         set(newVal) {

@@ -132,10 +132,10 @@
           method: 'get',
           url: 'api/upgrade/list'
         }).then((res) => {
-          console.log(res)
-          console.log(this.is_sku)
+          // console.log(res)
+          // console.log(this.is_sku)
           if (res.data.status === 200) {
-            if (res.data.data.length != 0) {
+            if (res.data.data.length !== 0) {
               this.is_sku = true
               this.skuArr = res.data.data
               this.price = res.data.data[0].price
@@ -161,7 +161,7 @@
             } else {
               _self.readonly = true
             }
-            console.log(_self.readonly)
+            // console.log(_self.readonly)
           }, function (error) {
             console.log('4g请求失败', error)
           })

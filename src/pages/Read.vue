@@ -30,7 +30,7 @@
       } else {
         this.initindex = 0
       }
-      console.log('here', this.initindex)
+      // console.log('here', this.initindex)
       this.axios.get('/api/ebook/listType').then(
         res => {
           if (res.status === 200) {

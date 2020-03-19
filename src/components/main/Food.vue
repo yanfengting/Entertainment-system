@@ -6,7 +6,7 @@
         <!--<p class="second">Restaurant</p>-->
       </div>
       <span class="first-font">餐食</span>
-      <food-alert :food_sku="food_sku" :seat="newseat"></food-alert>
+      <food-alert :food_sku="sku_food" :seat="newseat"></food-alert>
     </div>
   </div>
 </template>
@@ -14,23 +14,23 @@
   import FoodAlert from './FoodAlert'
 export default {
   components: { FoodAlert },
-  props: {
-    seat: {
-      type: String
-    },
-    food_sku: {
-      type: Boolean
-    }
-  },
-
+  // props: {
+  //   seat: {
+  //     type: String
+  //   },
+  //   food_sku: {
+  //     type: Boolean
+  //   }
+  // },
   watch: {
-    food_sku: function (val, oldVal) {
+    sku_food: function (val, oldVal) {
       this.is_sku = val
        }
   },
   data() {
     return {
-      newseat: this.seat
+      newseat: this.seat,
+      sku_food: this.food_sku
     }
   },
   methods: {
@@ -45,13 +45,13 @@ export default {
               this.$dialog('该功能已关闭，暂时无法使用', 'my-eable')
               return
             }
-            this.food_sku = true
+            this.sku_food = true
           }
         })
     },
     // 点击蒙层取消
     cancelMask: function() {
-      this.food_sku = false
+      this.sku_food = false
     }
   }
 }

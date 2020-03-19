@@ -105,16 +105,16 @@
       onScroll(pos) {
       },
       onItemClick(item) {
-        console.log('click item:', item)
+        // console.log('click item:', item)
       },
       moviedetail(id) {
-        this.$router.push({path: '/movieDetail', query: {'id': id}})
+        this.$router.push({ path: '/movieDetail', query: { 'id': id } })
       },
       onBtnClick(btn, index) {
 
       }
     },
-    components: {VideoRate}
+    components: { VideoRate }
   }
 </script>
 

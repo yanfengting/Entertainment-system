@@ -189,7 +189,7 @@
         let newTransferDetail = []
 
         let len = _self.transferDetail !== null ? _self.transferDetail.length - 1 : 0
-        console.log(_self.transferDetail)
+        // console.log(_self.transferDetail)
         if (transUser.transferNameCh === userFlight.arriveDetail.airportName) {
           var arrItem = userFlight.arriveDetail
           arrItem['show'] = true

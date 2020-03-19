@@ -29,7 +29,7 @@
         }
       }).then((res) => {
           if (res.status === 200) {
-            console.log(res)
+            // console.log(res)
             this.safety_text = res.data.data
           } else {
             console.log('数据获取失败，请刷新重试')

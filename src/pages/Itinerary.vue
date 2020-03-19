@@ -225,12 +225,12 @@
                         for (let i = transferArriveDate.length - 1; i >= 0; i--) {
                             let obj = []
                             let jisuan = this.dateDif(transferDepatureDate[i], transferArriveDate[i]) // 经停时 停留时长
-                            console.log(departIfo.length)
+                            // console.log(departIfo.length)
                             obj.transferDetail = departIfo[i] // 经停机场
                             obj.transferArriveDate = transferArriveDate[i] // 经停开始时间
                             obj.transferDepatureDate = transferDepatureDate[i] // 经停结束时间
                             obj.datedft = jisuan // 停留时长
-                            console.log(obj)
+                            // console.log(obj)
                             this.times.push(obj)
                         }
                     }
@@ -244,7 +244,7 @@
                 method: 'get',
                 url: '/api/transitUser/get'
             }).then((res) => {
-                console.log(res)
+                // console.log(res)
                 if (res.data.status === 200) {
                     this.tcflightDetail = res.data.data
                     // 通程中转时间
@@ -261,8 +261,8 @@
                                 obj.transferArriveDate = this.times[i].transferArriveDate// 经停开始时间
                                 obj.transferDepatureDate = this.times[i].transferDepatureDate // 经停结束时间
                                 obj.datedft = this.times[i].datedft // 停留时长
-                                console.log('hello')
-                                console.log(obj)
+                                // console.log('hello')
+                                // console.log(obj)
                                 this.tctimes.push(obj)
                             }
                         }

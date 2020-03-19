@@ -72,11 +72,11 @@ export default {
   mounted () {
     var userInfo = localStorage.getItem('userInfo')
     this.loginForm = JSON.parse(userInfo) // 转为JSON
-    console.log("loginForm")
-    console.log(this.loginForm)
+    // console.log('loginForm')
+    // console.log(this.loginForm)
     // 请求会员数据
     this.axios.get('/api/member/get?phone=' + this.loginForm.tel).then(res => {
-      console.log(res)
+      // console.log(res)
       // if (res.data.status === 200) {
       //   if(res.data.data != null){
       //     this.member = res.data.data;
@@ -98,8 +98,8 @@ export default {
         }
       },
     submit () {
-      if(this.loginForm.password != null && this.loginForm.repassword != null){
-              if(this.loginForm.password == this.loginForm.repassword){
+      if (this.loginForm.password != null && this.loginForm.repassword != null) {
+              if (this.loginForm.password === this.loginForm.repassword) {
                 this.axios({
                   method: 'post',
                   url: '/api/member/save',
@@ -109,19 +109,18 @@ export default {
                     'password': this.loginForm.password
                   }
                 }).then((res) => {
-                  console.log(res)
+                  // console.log(res)
                   this.$router.push('/main')
                   registryToast.showToast('恭喜你，成功注册会员')
                 })
-              }else{
+              } else {
                 // console.log('两次密码输入不一致')
                 registryToast.showToast('两次密码输入不一致')
               }
-          }else{
+          } else {
             // console.log('密码或者确认密码不能为空')  
             registryToast.showToast('密码或者确认密码不能为空')
           }
-      
     }
   },
   components: {

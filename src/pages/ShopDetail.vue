@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div >
     <Nav></Nav>
     <!-- 轮播图 -->
     <cube-slide :speed="200" ref="slide"  >
@@ -29,25 +29,30 @@
     <div class="module-price">
       <div class="real-price">
         <span>
-          <strong>¥</strong> 34.7
+          <strong>¥</strong> {{shopdetailArr.price}}
         </span>
       </div>
     </div>
 
     <div class="module-price">
-      <p>新年礼物升辉飞机模型国航南航东航波音空客380仿真大客机模型</p>
+      <p>{{shopdetailArr.name}}</p>
+    </div>
+    <div class="module-price" v-for="(item, index) in shopdetailArr.thumbUrls" :key="index">
+      <img src="item" alt="">
     </div>
 
     <div class="module-price">
       <p
         class="module-content"
-      >新年礼物升辉飞机模型国航南航东航波音空客380仿真大客机模型新年礼物升辉飞机模型国航南航东航波音空客380仿真大客机模型新年礼物升辉飞机模型国航南航东航波音空客380仿真大客机模型新年礼物升辉飞机模型国航南航东航波音空客380仿真大客机模型新年礼物升辉飞机模型国航南航东航波音空客380仿真大客机模型</p>
+      >{{shopdetailArr.description}}</p>
     </div>
+
     <div style="display:flex">
       <button @click="saveLink" class="savegift blue">保存链接</button>
       <button @click="buyGoods" class="savegift orange">购买商品</button>
     </div>
 
+    <!-- 弹框 -->
     <div v-if="is_sku" class="specification_mask2" style="z-index: 11">
         <div class="specification_com2" @click.stop="is_sku==false">
           <div class="productConten">
@@ -61,9 +66,9 @@
                 <div class="main">
                   <div class="price-wrap">
                     <!-- <p class="">￥{{price}}</p> -->
-                    <p><strong>¥</strong> 34.7</p>
+                    <p><strong>¥</strong> {{shopdetailArr.price}}</p>
                   </div>
-                  <li>飞机模型</li>
+                  <li>{{shopdetailArr.name}}</li>
                 </div>
                 <a class="sku-close" @click="cancelMask" aria-label="关闭">
                   <!-- <i class="iconfont icon-chahao"></i> -->
@@ -86,7 +91,7 @@
               <input id="number" type="text" v-model="newseat" ref="input">
             </div>
           </div>
-          <cube-button @click="goods_addCart" class="demandBtn1"  :primary="true" >提交订单</cube-button>
+          <cube-button @click="goods_addCart" class="demandBtn1"  :primary="true" >购买商品</cube-button>
           <!-- <cube-button @click="goods_addCart" :primary="true">提交订单</cube-button> -->
         </div>
       </div>
@@ -122,27 +127,36 @@ export default {
         }
       ],
       destArr: [],
-      newseat: this.$route.query.seat
+      newseat: this.$route.query.seat,
+      shopdetailArr: []
     }
   },
   created: function() {
-    // 参数：city mobile
-    this.axios.get('/api/destination/view').then(
-      res => {
-        console.log(res)
-        if (res.status === 200) {
-          this.destArr = res.data.data
-          console.log(this.destArr)
-        } else {
-          console.log('数据获取失败，请刷新重试')
-        }
-      },
-      function(err) {
-        console.log(err)
-      }
-    )
+     let newseat = this.$route.query.seat
+     let id = this.$route.query.id
+     console.log(id)
+    //  let _this = this
+     this.getVideo(id)
   },
   methods: {
+    getVideo(id) {
+      // let _this = this
+      // 参数：city mobile
+      this.axios.get('/api/item/' + id).then(
+        res => {
+          // console.log(res)
+          if (res.status === 200) {
+            this.shopdetailArr = res.data.data
+            console.log(this.shopdetailArr)
+          } else {
+            console.log('数据获取失败，请刷新重试')
+          }
+        },
+        function(err) {
+          console.log(err)
+        }
+      )
+    },
     saveLink() {},
     buyGoods() {
          this.is_sku = true

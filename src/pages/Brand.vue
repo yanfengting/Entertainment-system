@@ -37,7 +37,7 @@
           this.content = res.data.data[0].content
           this.current = res.data.data[0].title
           this.bottomshow = true
-          console.log(this.brandArr)
+          // console.log(this.brandArr)
         } else {
           console.log('数据获取失败，请刷新重试')
         }
@@ -46,7 +46,7 @@
     methods: {
       changeHandler(label) {
         this.current = label
-        console.log('changed to:', label)
+        // console.log('changed to:', label)
       },
       stickyChangeHandler(current) {
         this.current = current

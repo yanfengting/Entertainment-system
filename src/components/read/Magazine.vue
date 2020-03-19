@@ -63,7 +63,7 @@
       endScroll() {
       },
       onItemClick(item) {
-        console.log('click item:', item)
+        // console.log('click item:', item)
       },
       toDetail(item) {
         this.$router.push({ path: '/magDetail', query: { 'id': item.id } })

@@ -54,12 +54,12 @@ export default {
   created: function () {
     var userInfo = localStorage.getItem('userInfo')
     this.userInfo = JSON.parse(userInfo) // 转为JSON
-    console.log('here')
+    // console.log('here')
     this.axios({
       method: 'get',
       url: '/api/item/list?type=旅游'
     }).then((res) => {
-      console.log(res)
+      // console.log(res)
       if (res.data.status === 200) {
         this.giftArr = res.data.data
         // console.log(this.skuArr)

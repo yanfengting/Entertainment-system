@@ -190,7 +190,7 @@
             'mobile': this.loginForm.tel
           }
         }).then((res) => {
-          console.log(res)
+          // console.log(res)
           if (res.data.status === 200) {
             // 登录后跳转的页面
             this.show = false
@@ -236,7 +236,7 @@
                 'mobile': this.loginForm.tel
               }
             }).then((res) => {
-              console.log(res)
+              // console.log(res)
               if (res.data.status === 200) {
                 this.loginForm.token = res.data.data
                 localStorage.setItem('userInfo', JSON.stringify(this.loginForm)) // JSON.stringify 将JSON转为字符串存到变量里
@@ -294,7 +294,7 @@
                 'verificationCode': this.loginForm.verification
               }
             }).then((res) => {
-              console.log(res)
+              // console.log(res)
               if (res.data.status === 200) {
                 this.loginForm.token = res.data.data
                 localStorage.setItem('userInfo', JSON.stringify(this.loginForm)) // JSON.stringify 将JSON转为字符串存到变量里

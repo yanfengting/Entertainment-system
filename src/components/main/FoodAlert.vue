@@ -47,7 +47,7 @@
           </div>
           <div type="flex" class="van-row--flex sku_specification3">
             <div class="van-col van-col--12" :span="12">总价</div>
-            <div class="van-col van-col--12 number" style="text-align: right">
+            <div v-if="i!==-1" class="van-col van-col--12 number" style="text-align: right">
               <div id="number" class="number"  style="height: auto; border: 1px solid #fff;  text-align: right;"><strong>¥</strong>{{countPrice}}</div>
             </div>
           </div>
@@ -223,13 +223,13 @@
       // 提交订单
       sku_addCart(item) {
         // this.seat = this.$refs.input.value // input框接收一个传过来的座位号，编辑以后获取
-        console.log(this.newseat)
+        // console.log(this.newseat)
         this.$emit('getCalled', this.newseat)
         this.newnum = this.$refs.num.value
-        console.log('价钱 ' + this.price)
-        console.log('种类 ' + this.type)
-        console.log('座位号 ' + this.seat)
-        console.log('数量 ' + this.newnum)
+        // console.log('价钱 ' + this.price)
+        // console.log('种类 ' + this.type)
+        // console.log('座位号 ' + this.seat)
+        // console.log('数量 ' + this.newnum)
         this.is_sku = false
         if (this.i === -1) {
         } else {

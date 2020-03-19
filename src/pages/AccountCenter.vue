@@ -55,7 +55,7 @@
     },
     methods: {
       accountOrder: function () {
-        console.log('我的订单')
+        // console.log('我的订单')
         this.$router.push('/account_order')
       },
       registeredMember() {
@@ -70,7 +70,7 @@
       // console.log(name)
       // 请求会员数据 判断如果手机号存在于数据库，提示已经注册会员
       this.axios.get('/api/member/get?phone=' + this.userInfo.tel).then(res => {
-        console.log(res)
+        // console.log(res)
         if (res.data.status === 200) {
           if (res.data.data.length !== null) {
             this.member = res.data.data

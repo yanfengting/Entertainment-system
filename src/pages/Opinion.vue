@@ -146,8 +146,8 @@
         }
       },
       fileChange(data) {
-        console.log('data')
-        console.log(data)
+        // console.log('data')
+        // console.log(data)
         this.imgdata = data
         // this.$options.methods.submitBtn(data)
       },

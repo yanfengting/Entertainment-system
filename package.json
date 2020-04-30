@@ -16,7 +16,7 @@
     "cssnano-preset-advanced": "^4.0.7",
     "cube-ui": "~1.12.1",
     "file-loader": "^3.0.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
     "lyric-parser": "^1.0.1",

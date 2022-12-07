@@ -28,7 +28,7 @@
     "postcss-url": "^8.0.0",
     "postcss-viewport-units": "^0.1.6",
     "postcss-write-svg": "^3.0.1",
-    "qs": "^6.7.0",
+    "qs": "^6.7.3",
     "swiper": "^4.4.6",
     "url-loader": "^1.1.2",
     "video.js": "^7.5.4",
